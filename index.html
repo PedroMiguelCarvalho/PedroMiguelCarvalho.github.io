@@ -1,6 +1,13 @@
 <html>
 	<script>
-		message = { command: "refresh" }
-		window.webkit.messageHandlers.accessToken.postMessage(message)
+        function renewToken() { // Declare a function
+            message = { command: "refresh" }
+            window.webkit.messageHandlers.accessToken.postMessage(message)
+        }
 	</script>
+    <body>
+        <h1>Tap to renew the token</h1>
+        <button onclick="renewToken()">Click me</button>
+
+    </body>
 </html>

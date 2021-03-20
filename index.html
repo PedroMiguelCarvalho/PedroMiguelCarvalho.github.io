@@ -1,13 +1,24 @@
 <html>
-	<script>
-        function renewToken() { // Declare a function
-            message = { command: "refresh" }
-            window.webkit.messageHandlers.accessToken.postMessage(message)
+    <script>
+        function closeWebview() { // Declare a function
+            message = { command: "close" }
+            window.webkit.messageHandlers.webview.postMessage(message)
         }
-	</script>
+        function logFirebaseEvent() { // Declare a function
+            message = { command: "logEvent" }
+            window.webkit.messageHandlers.firebase.postMessage(message)
+        }
+        function setUserProperty() { // Declare a function
+            message = { command: "setUserProperty" }
+            window.webkit.messageHandlers.firebase.postMessage(message)
+        }
+    </script>
     <body>
-        <h1>Tap to renew the token</h1>
-        <button onclick="renewToken()">Click me</button>
-
+        <h1>Tap to close the webview</h1>
+        <button onclick="closeWebview()">Click me</button>
+        <h1>Tap to log firebase event</h1>
+        <button onclick="logFirebaseEvent()">Click me</button>
+        <h1>Tap to set firebase user property</h1>
+        <button onclick="setUserProperty()">Click me</button>
     </body>
 </html>

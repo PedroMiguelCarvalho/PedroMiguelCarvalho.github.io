@@ -5,11 +5,11 @@
             window.webkit.messageHandlers.webview.postMessage(message)
         }
         function logFirebaseEvent() { // Declare a function
-            message = { command: "logEvent" }
+            message = { command: "logEvent", name: "testEvent" }
             window.webkit.messageHandlers.firebase.postMessage(message)
         }
         function setUserProperty() { // Declare a function
-            message = { command: "setUserProperty" }
+            message = { command: "setUserProperty", name: "testUP", value: "testValue" }
             window.webkit.messageHandlers.firebase.postMessage(message)
         }
     </script>
